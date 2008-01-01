@@ -3,7 +3,7 @@
 %define name		btf
 %define NAME		BTF
 %define version		1.0.1
-%define release		%mkrel 1
+%define release		%mkrel 2
 %define major		%{version}
 %define libname		%mklibname %{name} %{major}
 %define develname	%mklibname %{name} -d
@@ -57,6 +57,7 @@ Requires:	%{libname} = %{epoch}:%{version}-%{release}
 Provides:	%{name}-devel = %{epoch}:%{version}-%{release}
 Obsoletes:	%mklibname %name 0 -d
 Obsoletes: 	%mklibname %name 1 -d
+Obsoletes: 	%mklibname %name 1 -d -s
 
 %description -n %{develname}
 BTF is a software package for permuting a matrix into block upper

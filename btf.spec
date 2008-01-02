@@ -3,7 +3,7 @@
 %define name		btf
 %define NAME		BTF
 %define version		1.0.1
-%define release		%mkrel 2
+%define release		%mkrel 3
 %define major		%{version}
 %define libname		%mklibname %{name} %{major}
 %define develname	%mklibname %{name} -d
@@ -33,8 +33,6 @@ permutation to block upper triangular form.
 Summary:	Library of routines for permuting a matrix into block upper triangular form
 Group:		System/Libraries
 Provides:	%{libname} = %{epoch}:%{version}-%{release}
-Obsoletes:	%mklibname %name 0
-Obsoletes:	%mklibname %name 1
 
 %description -n %{libname}
 BTF is a software package for permuting a matrix into block upper

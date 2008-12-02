@@ -3,7 +3,7 @@
 %define name		btf
 %define NAME		BTF
 %define version		1.0.1
-%define release		%mkrel 6
+%define release		%mkrel 7
 %define major		%{version}
 %define libname		%mklibname %{name} %{major}
 %define develname	%mklibname %{name} -d
@@ -11,12 +11,13 @@
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
+Epoch:		%{epoch}
 Summary:	Routines for permuting a matrix into block upper triangular form
 Group:		System/Libraries
 License:	LGPL
 URL:		http://www.cise.ufl.edu/research/sparse/btf/
 Source0:	http://www.cise.ufl.edu/research/sparse/btf/%{NAME}-%{version}.tar.gz
-Source1:	http://www.cise.ufl.edu/research/sparse/ufconfig/UFconfig-3.1.0.tar.gz
+Source1:	http://www.cise.ufl.edu/research/sparse/ufconfig/UFconfig-3.2.0.tar.gz
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
@@ -33,6 +34,7 @@ permutation to block upper triangular form.
 Summary:	Library of routines for permuting a matrix into block upper triangular form
 Group:		System/Libraries
 Provides:	%{libname} = %{epoch}:%{version}-%{release}
+Obsoletes:	%mklibname %{name} 1
 
 %description -n %{libname}
 BTF is a software package for permuting a matrix into block upper
@@ -53,9 +55,9 @@ Group:		Development/C
 Requires:	suitesparse-common-devel >= 3.0.0
 Requires:	%{libname} = %{epoch}:%{version}-%{release}
 Provides:	%{name}-devel = %{epoch}:%{version}-%{release}
-Obsoletes:	%mklibname %name 0 -d
-Obsoletes: 	%mklibname %name 1 -d
-Obsoletes: 	%mklibname %name 1 -d -s
+Obsoletes:	%mklibname %{name} 0 -d
+Obsoletes: 	%mklibname %{name} 1 -d
+Obsoletes: 	%mklibname %{name} 1 -d -s
 
 %description -n %{develname}
 BTF is a software package for permuting a matrix into block upper

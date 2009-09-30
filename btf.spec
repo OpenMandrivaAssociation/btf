@@ -2,8 +2,8 @@
 
 %define name		btf
 %define NAME		BTF
-%define version		1.0.1
-%define release		%mkrel 9
+%define version		1.1.0
+%define release		%mkrel 1
 %define major		%{version}
 %define libname		%mklibname %{name} %{major}
 %define develname	%mklibname %{name} -d
@@ -52,7 +52,7 @@ linked against %{NAME}.
 %package -n %{develname}
 Summary:	C routines for permuting a matrix into block upper triangular form
 Group:		Development/C
-Requires:	suitesparse-common-devel >= 3.0.0
+Requires:	suitesparse-common-devel >= 3.2.0-2
 Requires:	%{libname} = %{epoch}:%{version}-%{release}
 Provides:	%{name}-devel = %{epoch}:%{version}-%{release}
 Obsoletes:	%mklibname %{name} 0 -d

@@ -2,7 +2,7 @@
 
 %define name		btf
 %define NAME		BTF
-%define version		1.1.0
+%define version		1.1.1
 %define release		%mkrel 1
 %define major		%{version}
 %define libname		%mklibname %{name} %{major}

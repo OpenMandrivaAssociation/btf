@@ -71,6 +71,7 @@ ln -sf %{_includedir}/suitesparse/SuiteSparse_config.* ../SuiteSparse_config
 %build
 cd %{NAME}
 pushd Lib
+    %global optflags %{optflags} -fforce-addr -frename-registers -funroll-loops -Ofast
     %make -f Makefile CC=gcc CFLAGS="%{optflags} -fPIC -I%{_includedir}/suitesparse" INC=
     gcc -shared -Wl,-soname,lib%{name}.so.%{major} -o lib%{name}.so.%{version} *.o
 popd

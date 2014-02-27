@@ -1,7 +1,7 @@
-%define NAME		BTF
-%define major		%{version}
-%define libname		%mklibname %{name} %{major}
-%define develname	%mklibname %{name} -d
+%define NAME	BTF
+%define major	%{version}
+%define libname	%mklibname %{name} %{major}
+%define devname	%mklibname %{name} -d
 
 Name:		btf
 Version:	1.2.0
@@ -41,14 +41,14 @@ permutation to block upper triangular form.
 This package contains the library needed to run programs dynamically
 linked against %{NAME}.
 
-%package -n %{develname}
+%package -n %{devname}
 Summary:	C routines for permuting a matrix into block upper triangular form
 Group:		Development/C
 Requires:	suitesparse-common-devel >= 4.0.0
 Requires:	%{libname} = %{EVRD}
 Provides:	%{name}-devel = %{EVRD}
 
-%description -n %{develname}
+%description -n %{devname}
 BTF is a software package for permuting a matrix into block upper
 triangular form. It includes a maximum transversal algorithm, which
 finds a permutation of a square or rectangular matrix so that it has a
@@ -71,8 +71,8 @@ ln -sf %{_includedir}/suitesparse/SuiteSparse_config.* ../SuiteSparse_config
 %build
 cd %{NAME}
 pushd Lib
-    %make -f Makefile CC=%__cc CFLAGS="%{optflags} -fPIC -I%{_includedir}/suitesparse" INC=
-    %__cc -shared -Wl,-soname,lib%{name}.so.%{major} -o lib%{name}.so.%{version} *.o
+    %make -f Makefile CC=gcc CFLAGS="%{optflags} -fPIC -I%{_includedir}/suitesparse" INC=
+    gcc -shared -Wl,-soname,lib%{name}.so.%{major} -o lib%{name}.so.%{version} *.o
 popd
 
 %install
@@ -99,7 +99,7 @@ done
 %files -n %{libname}
 %{_libdir}/*.so.*
 
-%files -n %{develname}
+%files -n %{devname}
 %{_docdir}/%{name}
 %{_includedir}/*
 %{_libdir}/*.so

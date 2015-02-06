@@ -5,7 +5,7 @@
 
 Name:		btf
 Version:	1.2.0
-Release:	2
+Release:	3
 Epoch:		1
 Summary:	Routines for permuting a matrix into block upper triangular form
 Group:		System/Libraries

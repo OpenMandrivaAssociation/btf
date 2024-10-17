@@ -10,7 +10,7 @@ Epoch:		1
 Summary:	Routines for permuting a matrix into block upper triangular form
 Group:		System/Libraries
 License:	LGPLv2+
-URL:		http://www.cise.ufl.edu/research/sparse/btf/
+URL:		https://www.cise.ufl.edu/research/sparse/btf/
 Source0:	http://www.cise.ufl.edu/research/sparse/btf/%{NAME}-%{version}.tar.gz
 BuildRequires:	suitesparse-common-devel >= 4.0.0
 
